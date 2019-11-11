@@ -13,6 +13,8 @@ MSVSettingBundleManager makes it easy to read / set settings in the Settings Bun
 
 https://appetize.io/app/xd75be4jgh3469u67ug7ud72ym
 
+[<img src="https://raw.githubusercontent.com/sergemoskalenko/MSVSettingBundleManager/master/MSVSettingBundleManager.gif" alt="Screen" width="244"/>](https://github.com/sergemoskalenko/MSVSettingBundleManager)
+
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 Init with keys:
