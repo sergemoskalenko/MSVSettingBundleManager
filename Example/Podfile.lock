@@ -1,0 +1,16 @@
+PODS:
+  - MSVSettingBundleManager (0.1.0)
+
+DEPENDENCIES:
+  - MSVSettingBundleManager (from `../`)
+
+EXTERNAL SOURCES:
+  MSVSettingBundleManager:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MSVSettingBundleManager: 09d3810c197a70213d216e2db56ef245844913bd
+
+PODFILE CHECKSUM: d181bc1974b319dcbda9cc00641d4f92ad78f14a
+
+COCOAPODS: 1.7.5

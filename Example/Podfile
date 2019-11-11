@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MSVSettingBundleManager_Example' do
+  pod 'MSVSettingBundleManager', :path => '../'
+
+  target 'MSVSettingBundleManager_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
