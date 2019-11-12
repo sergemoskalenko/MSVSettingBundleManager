@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MSVSettingManager {
+open class MSVSettingManager {
     var actions: [String:(Any?)->()] = [String:(Any?)->()]()
     var values: [String:Any] = [String:Any]()
     static var keys: [String] = [String]()
