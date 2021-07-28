@@ -24,6 +24,15 @@ open class MSVSettingManager {
         }
     }
     
+    public subscript(index: String) -> Any? {
+        get {
+            return MSVSettingManager.get(forKey: index)
+        }
+        set(newValue) {
+                MSVSettingManager.set(newValue, forKey: index)
+        }
+    }
+    
     public init(keys: [String]) {
         MSVSettingManager.register()
         MSVSettingManager.keys = keys
@@ -43,7 +52,12 @@ open class MSVSettingManager {
                     }
                 }
             } else if value == nil && newValue != nil || value != nil && newValue == nil {
-                values[key] = newValue
+                if newValue != nil {
+                    values[key] = newValue
+                } else {
+                    values.removeValue(forKey: key)
+                }
+                
                 if let f = actions[key] {
                     f(newValue)
                 }

@@ -40,6 +40,16 @@
 			<key>DefaultValue</key>
 			<true/>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Some string</string>
+			<key>Key</key>
+			<string>string</string>
+			<key>DefaultValue</key>
+			<string>--</string>
+		</dict>
 	</array>
 </dict>
 </plist>

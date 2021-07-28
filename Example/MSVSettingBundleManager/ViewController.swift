@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet var imageViewCollection: [UIImageView]!
     @IBOutlet weak var label: UILabel!
     
-    var settings = MSVSettingManager(keys:["shape", "switch"])
+    var settings = MSVSettingManager(keys:["shape", "switch", "string"])
     let images = ["triangle", "square", "circle", "star"]
     var _activeIndex = 0
     var activeIndex: Int {
@@ -33,8 +33,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        readSettings()
         setUpSettings()
-        setShape()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
 
     func clean() {
@@ -56,12 +62,36 @@ class ViewController: UIViewController {
         let tag = sender.tag
         activeIndex = tag - 31
         setShape()
+        decribe()
+    }
+    
+    @IBAction func switchButtonAction(_ sender: UIButton) {
+        
+        settings["switch"] = !(self.label.text == "On")
+        readSettings()
+        decribe()
     }
     
 // Mark: - Settings Bundle connections
     
+    func readSettings() {
+        if let shape = settings["shape"] as? String, let index = self.images.firstIndex(of: shape)  {
+            self.activeIndex = index
+        }
+        
+        if let isOn = settings["switch"] as? Bool {
+            self.label.text = isOn ? "On" : "Off"
+        }
+        
+        setShape()
+    }
+    
+    func decribe() {
+        settings["string"] = "shape: \(images[activeIndex]), switch: \(self.label.text ?? "")"
+    }
+    
     func setShape() {
-        settings["shape".intDef] = images[activeIndex]
+        settings["shape"] = images[activeIndex]
     }
     
     func setUpSettings() {
